@@ -1,1 +1,1 @@
-Pasta da nossa história 💖
+Pasta de fotos da nossa história 💖
