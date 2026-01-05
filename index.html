@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karoline 💙 Elaine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+  background:linear-gradient(135deg,#1e1e2f,#2a2a40);
+  color:#fff;
+}
+
+section{
+  padding:80px 20px;
+  max-width:900px;
+  margin:auto;
+}
+
+h1,h2{text-align:center;margin-bottom:20px}
+p{text-align:center;line-height:1.9;color:#ddd}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{font-size:2.3rem;margin-bottom:25px}
+
+.hero button{
+  padding:15px 35px;
+  border:none;
+  border-radius:30px;
+  background:#ff6b81;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* BOTÃO MÚSICA */
+.music-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:rgba(255,255,255,0.15);
+  border:none;
+  border-radius:50%;
+  width:50px;
+  height:50px;
+  font-size:20px;
+  color:white;
+  cursor:pointer;
+}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:40px}
+
+.moment{
+  background:rgba(255,255,255,0.06);
+  padding:25px;
+  border-radius:18px;
+}
+
+.moment img{
+  width:100%;
+  border-radius:14px;
+  margin-bottom:15px;
+}
+
+/* GALERIA */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:14px;
+}
+
+/* CODE */
+.code{
+  background:#0d0d1a;
+  border-radius:14px;
+  padding:25px;
+  font-family:monospace;
+  color:#00ffcc;
+}
+
+/* CARTA */
+#letter{font-size:1.15rem;min-height:150px}
+
+/* EASTER EGG */
+.egg{
+  margin-top:50px;
+  text-align:center;
+}
+
+.heart{
+  font-size:50px;
+  cursor:pointer;
+  animation:pulse 1.5s infinite;
+}
+
+.hint{
+  font-size:0.9rem;
+  color:#aaa;
+  margin-top:10px;
+}
+
+.secret{
+  display:none;
+  margin-top:25px;
+  padding:25px;
+  border-radius:18px;
+  background:rgba(255,107,129,0.15);
+  font-size:1.2rem;
+}
+
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:#aaa;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+  100%{transform:scale(1)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MÚSICA -->
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b7bdfc5c3.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Algumas histórias merecem mais que palavras.<br>Merecem código.</h1>
+<button onclick="document.getElementById('timeline').scrollIntoView({behavior:'smooth'})">
+Entrar na nossa história
+</button>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+<h2>Nossa Linha do Tempo</h2>
+<div class="timeline">
+
+<div class="moment">
+<img src="fotos/foto1.jpg">
+<p>Antes mesmo de existir “nós”, eu já te via passar pela minha rua.</p>
+</div>
+
+<div class="moment">
+<img src="fotos/foto2.jpg">
+<p>A vida nos colocou no mesmo trabalho, mas ainda não era o tempo certo.</p>
+</div>
+
+<div class="moment">
+<img src="fotos/foto3.jpg">
+<p>O acaso virou escolha. E começamos a escrever nossa história.</p>
+</div>
+
+</div>
+</section>
+
+<!-- GALERIA -->
+<section>
+<h2>Nossos Momentos</h2>
+<div class="gallery">
+<img src="fotos/foto4.jpg">
+<img src="fotos/foto5.jpg">
+<img src="fotos/foto6.jpg">
+</div>
+</section>
+
+<!-- CODE -->
+<section>
+<h2>Amor em Código</h2>
+<div class="code">
+<pre>
+const amor = "Karoline";
+
+if (coração) {
+  coração.escolhe(amor);
+}
+
+while (vida) {
+  Elaine + Karoline;
+}
+</pre>
+</div>
+</section>
+
+<!-- CARTA -->
+<section>
+<h2>Para Você, Karoline</h2>
+<p id="letter"></p>
+
+<!-- EASTER EGG -->
+<div class="egg">
+  <div class="heart" onclick="showSecret()">❤️</div>
+  <div class="hint">toque no coração</div>
+  <div class="secret" id="secret">
+    Karoline,<br><br>
+    <strong>eu escolheria você em todas as versões da minha vida.</strong> 💙
+  </div>
+</div>
+
+</section>
+
+<footer>
+Desenvolvido com amor.<br>— <strong>Elaine</strong>
+</footer>
+
+<script>
+/* CARTA */
+const text="O que começou como coincidência virou cuidado. Você é a lógica principal da minha vida, e tudo faz mais sentido com você.";
+let i=0;
+const el=document.getElementById("letter");
+function typeWriter(){
+  if(i<text.length){
+    el.innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeWriter,40);
+  }
+}
+setTimeout(typeWriter,1000);
+
+/* MÚSICA */
+const music=document.getElementById("music");
+function toggleMusic(){
+  music.paused ? music.play() : music.pause();
+}
+
+/* EASTER EGG */
+function showSecret(){
+  document.getElementById("secret").style.display="block";
+}
+</script>
+
+</body>
+</html>
