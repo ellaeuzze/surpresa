@@ -142,9 +142,9 @@ footer{
 
 <body>
 
-<!-- MÚSICA -->
+<!-- 🎵 MÚSICA TREVO -->
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b7bdfc5c3.mp3" type="audio/mpeg">
+  <source src="trevo.mp3" type="audio/mpeg">
 </audio>
 
 <button class="music-btn" onclick="toggleMusic()">🎵</button>
@@ -163,18 +163,25 @@ Entrar na nossa história
 <div class="timeline">
 
 <div class="moment">
-<img src="fotos/AirBrush_20250830124957.jpg" alt="Foto 1">
-<p>Antes mesmo de existir “nós”, eu já te via passar pela minha rua.</p>
+<img src="fotos/AirBrush_20250830124957.jpg">
+<p>
+Antes mesmo de existir “nós”, eu já te via passar pela minha rua,
+sem imaginar que o destino estava silenciosamente escrevendo a nossa história.
+</p>
 </div>
 
 <div class="moment">
-<img src="fotos/AirBrush_20250905124646.jpg" alt="Foto 2">
-<p>A vida nos colocou no mesmo trabalho, mas ainda não era o tempo certo.</p>
+<img src="fotos/AirBrush_20250905124646.jpg">
+<p>
+O tempo ainda não era nosso aliado, mas a vida já insistia em nos aproximar.
+</p>
 </div>
 
 <div class="moment">
-<img src="fotos/AirBrush_20251011083910.jpg" alt="Foto 3">
-<p>O acaso virou escolha. E começamos a escrever nossa história.</p>
+<img src="fotos/AirBrush_20251011083910.jpg">
+<p>
+Quando finalmente foi, não restaram dúvidas: era amor em sua forma mais sincera.
+</p>
 </div>
 
 </div>
@@ -184,9 +191,9 @@ Entrar na nossa história
 <section>
 <h2>Nossos Momentos</h2>
 <div class="gallery">
-<img src="fotos/AirBrush_20251011123311.jpg" alt="Foto 4">
-<img src="fotos/AirBrush_20251130022620.jpg" alt="Foto 5">
-<img src="fotos/AirBrush_20251220062506.jpg" alt="Foto 6">
+<img src="fotos/AirBrush_20251011123311.jpg">
+<img src="fotos/AirBrush_20251130022620.jpg">
+<img src="fotos/AirBrush_20251220062506.jpg">
 </div>
 </section>
 
@@ -197,8 +204,8 @@ Entrar na nossa história
 <pre>
 const amor = "Karoline";
 
-if (coração) {
-  coração.escolhe(amor);
+if (meuCoração) {
+  return você;
 }
 
 while (vida) {
@@ -213,13 +220,12 @@ while (vida) {
 <h2>Para Você, Karoline</h2>
 <p id="letter"></p>
 
-<!-- EASTER EGG -->
 <div class="egg">
   <div class="heart" onclick="showSecret()">❤️</div>
   <div class="hint">toque no coração</div>
   <div class="secret" id="secret">
     Karoline,<br><br>
-    <strong>eu escolheria você em todas as versões da minha vida.</strong> 💙
+    <strong>eu te amo em silêncio, em código, em gesto e em tudo que sou.</strong> 💙
   </div>
 </div>
 
@@ -234,6 +240,7 @@ Desenvolvido com amor.<br>— <strong>Elaine</strong>
 const text="O que começou como coincidência virou cuidado. Você é a lógica principal da minha vida, e tudo faz mais sentido com você.";
 let i=0;
 const el=document.getElementById("letter");
+
 function typeWriter(){
   if(i<text.length){
     el.innerHTML+=text.charAt(i);
@@ -253,28 +260,8 @@ function toggleMusic(){
 function showSecret(){
   document.getElementById("secret").style.display="block";
 }
-<!-- 🎵 Música Trevo -->
-<div style="text-align:center; margin:40px 0;">
-  <p style="font-size:18px;">💙 clique no coração 💙</p>
-
-  <button onclick="alternarMusica()"
-    style="
-      font-size:26px;
-      padding:15px 25px;
-      border:none;
-      border-radius:50px;
-      background:#ff4d6d;
-      color:white;
-      cursor:pointer;
-    ">
-    ❤️
-  </button>
-</div>
-
-<audio id="musica" loop>
-  <source src="trevo.mp3" type="audio/mpeg">
-</audio>
-</</audio
+</script>
 
 </body>
 </html>
+
